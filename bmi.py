@@ -19,4 +19,4 @@ def bmicalculator():
 
 
 if __name__ == '__main__':
-    bmicalculator()
+    start_server(bmicalculator, port=36535, debug=True)
