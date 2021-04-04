@@ -1,7 +1,12 @@
 from pywebio.input import *
 from pywebio.output import * 
 from pywebio import start_server
+from flask import Flask,render_template,request,make_response,jsonify
+import os
 
+app = Flask(__name__)
+
+@app.route('/')
 def bmicalculator():
     height = input("Enter your height in cm",type = FLOAT)
     weight = input("Enter your weight in kg",type = FLOAT)
@@ -19,4 +24,4 @@ def bmicalculator():
 
 
 if __name__ == '__main__':
-    start_server(bmicalculator, port=36535, debug=True)
+    app.run(debug=True)
