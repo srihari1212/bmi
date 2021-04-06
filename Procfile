@@ -1,2 +1,1 @@
-heroku ps:scale web=1
-worker: python bmi.py
+web: gunicorn bmi:app
