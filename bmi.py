@@ -1,5 +1,10 @@
 from pywebio.input import *
 from pywebio.output import * 
+from flask import Flask, send_from_directory
+from  pywebio.platform.flask import webio_view
+from pywebio import STATIC_PATH
+
+app = Flask(__name__)
 
 
 def bmicalculator():
@@ -16,7 +21,6 @@ def bmicalculator():
             put_text('Your BMI is :%.1f and the person is :%s'%(bmi,tuple2))
             break
 
+app.add_url_rule('/','webio_view',webio_view(bmicalculator),methods = ['GET','POST','OPTIONS'])
 
-
-if __name__ == '__main__':
-    bmicalculator()
+app.run(host='Localhost',port=80)
