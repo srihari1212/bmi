@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 def bmicalculator():
     height = input("Enter your height in cm",type = FLOAT)
+    print(height)
     weight = input("Enter your weight in kg",type = FLOAT)
 
     bmi = weight/(height/100)**2
