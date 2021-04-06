@@ -23,4 +23,5 @@ def bmicalculator():
 
 app.add_url_rule('/','webio_view',webio_view(bmicalculator),methods = ['GET','POST','OPTIONS'])
 
-app.run()
+if __name__ == "__main__":
+    app.run(debug=True)
